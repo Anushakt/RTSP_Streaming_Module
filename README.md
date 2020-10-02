@@ -13,7 +13,7 @@ Link : rtsp://freja.hiof.no:1935/rtplive/_definst_/hessdalen03.stream
 5. Open your browser and go to the address http://localhost:8080   
 
 # Dockerizing
-1. Open the windows poweshell and got the project directory
+1. Open the windows PowerShell  and got the project directory
 2. Enter below commands
     * npm run
     * docker build . -t rtspstreaming (rtspstreaming is an image name)
