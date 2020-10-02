@@ -15,8 +15,8 @@ Link : rtsp://freja.hiof.no:1935/rtplive/_definst_/hessdalen03.stream
 # Dockerizing
 1. Open the windows poweshell and got the project directory
 2. Enter below commands
-    npm run
-    docker build . -t rtspstreaming (rtspstreaming is an image name)
-    docker run rtspstreaming
-    docker run rtspstreaming -p 8080:80
+    * npm run
+    * docker build . -t rtspstreaming (rtspstreaming is an image name)
+    * docker run rtspstreaming
+    * docker run rtspstreaming -p 8080:80
 3. Open your browser and go to the address http://localhost:8080
