@@ -1,6 +1,6 @@
 # RTSP_Streaming_Module
 
-Objective : Building a RTSP streaming module which can take the following link and iterate it on the front end into the multiple of n.
+Objective : To Build a RTSP streaming module which can take the following link and iterate it on the front end into the multiple of n.
 Link : rtsp://freja.hiof.no:1935/rtplive/_definst_/hessdalen03.stream
 
 # Installation
