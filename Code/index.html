@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-<title >Intensenly</title>
+<title >Intelense</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
@@ -34,11 +34,11 @@ body,h1,h2,h3,h4,h5,h6,.w3-wide {font-family: "Montserrat", sans-serif;}
 
 <header class="w3-bar w3-top w3-hide-large w3-black w3-xlarge" >
   <div class="w3-bar-item w3-padding-24 w3-wide">Intensenly</div>
-  <a href="javascript:void(0)" class="w3-bar-item w3-button w3-padding-24 w3-right" onclick="w3_open()"><i class="fa fa-bars"></i></a>
+  <a href="javascript:void(0)" class="w3-bar-item w3-button w3-padding-24 w3-right" ><i class="fa fa-bars"></i></a>
 </header>
 
 
-<div class="w3-overlay w3-hide-large" onclick="w3_close()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
+<div class="w3-overlay w3-hide-large" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
 
 
 <div class="w3-main" style="margin-left:250px">
@@ -46,7 +46,7 @@ body,h1,h2,h3,h4,h5,h6,.w3-wide {font-family: "Montserrat", sans-serif;}
   <div class="w3-hide-large" style="margin-top:83px"></div>
 
   <header class="w3-container w3-xlarge" style="background-color:grey;">
-    <p class="w3-left">View Camera</p>
+    <p class="w3-left">Cameras Overview</p>
     <p class="w3-right">
      
       <i class="fa fa-search"></i>
@@ -58,11 +58,11 @@ body,h1,h2,h3,h4,h5,h6,.w3-wide {font-family: "Montserrat", sans-serif;}
    
        
 	 <div class="w3-container w3-black w3-padding-50"> 
-    <h1>Count of the frame</h1>
+    <h1>Count of the frames</h1>
     <p></p>
-    <p><input class="w3-input w3-border" type="text" id="framenumber" name="framenumber" placeholder="Enter the number" style="width:100%"></p>
-    <button type="submit" value="Submit" class="w3-button w3-red w3-margin-bottom" onclick="connect()">submit</button>
-	<button type="submit" value="refresh" class="w3-button w3-red w3-margin-bottom" onclick="refreshcall()">refresh</button>
+    <p><input class="w3-input w3-border" type="text" id="framenumber" name="framenumber" placeholder="Enter a number" style="width:100%"></p>
+    <button type="submit" value="Submit" class="w3-button w3-red w3-margin-bottom" onclick="connect()">Submit</button>
+	<button type="submit" value="refresh" class="w3-button w3-red w3-margin-bottom" onclick="refreshcall()">Refresh</button>
 	<div id="appendtodivtag" >  </div>
     </div>
   </div>  
@@ -90,46 +90,32 @@ body,h1,h2,h3,h4,h5,h6,.w3-wide {font-family: "Montserrat", sans-serif;}
 
 <script>
 
-function myAccFunc() {
-  var x = document.getElementById("demoAcc");
-  if (x.className.indexOf("w3-show") == -1) {
-    x.className += " w3-show";
-  } else {
-    x.className = x.className.replace(" w3-show", "");
-  }
-}
-
-
-
-
-
-
-function w3_open() {
-  document.getElementById("mySidebar").style.display = "block";
-  document.getElementById("myOverlay").style.display = "block";
-}
- 
-function w3_close() {
-  document.getElementById("mySidebar").style.display = "none";
-  document.getElementById("myOverlay").style.display = "none";
-}
 // Method to dynamically create the iframes
 function connect(){
 
 	var framecount = document.getElementById("framenumber").value;
-	
-for( var i=0;i< framecount;i++){
-var makediv = document.getElementById("appendtodivtag");
-var ifrm = document.createElement('iframe');
-ifrm.setAttribute('id', i); 
-ifrm.setAttribute('src', 'https://rtsp.me/embed/SrFRZkBH/');
-ifrm.setAttribute('width', '400');
-ifrm.setAttribute('height','300');
-makediv.appendChild(ifrm);
-}}
+    if(framecount<=0){
+		alert("Invalid frame count. Count of the frames should be more than 0.");
+	}
+	else if(isNaN(framecount)){
+		alert("Invalid frame count. Please enter a valid number.");
+	}
+	else {
+		for( var i=0;i< framecount;i++){
+			var makediv = document.getElementById("appendtodivtag");
+			var ifrm = document.createElement('iframe');
+			ifrm.setAttribute('id', i); 
+			ifrm.setAttribute('src', 'https://rtsp.me/embed/SrFRZkBH/');
+			ifrm.setAttribute('width', '400');
+			ifrm.setAttribute('height','300');
+			makediv.appendChild(ifrm);	
+	    }
+	}
+}
 // Method to refresh the webpage
 function refreshcall(){
-location.reload();}
+	location.reload();
+}
 
 </script>
 
