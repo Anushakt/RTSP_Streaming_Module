@@ -12,7 +12,7 @@ Link : rtsp://freja.hiof.no:1935/rtplive/_definst_/hessdalen03.stream
    http-server
 5. Open your browser and go to the address http://localhost:8080   
 
-# Dockerizing
+# Dockerize
 1. Open the windows PowerShell  and got the project directory
 2. Enter below commands
     * npm run
